@@ -1,0 +1,10 @@
+keybert==0.7.0
+multi_rake==0.0.2
+numpy==1.24.2
+pandas==1.5.3
+pip==23.0.1
+sentence_transformers==2.2.2
+setuptools==67.4.0
+tqdm==4.64.1
+transformers==4.26.1
+tweepy==4.12.1

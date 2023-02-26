@@ -3,6 +3,13 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# local runs
+*.ipynb
+*.csv
+*.pt
+run.py
+
+
 # C extensions
 *.so
 
