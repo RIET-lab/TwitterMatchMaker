@@ -6,7 +6,6 @@ __pycache__/
 # local runs
 *.ipynb
 *.csv
-*.pt
 run.py
 
 
