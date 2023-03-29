@@ -69,17 +69,18 @@ def phrase_check(word):
         return word
     
 def bigram_query(keywords, maxlen=1024):
-    base_piece = 'lang:en -is:retweet -has:media -is:reply '
+    base_piece = 'lang:en -is:retweet -has:media '
     query_pieces = list()
     length_flag = True
     ongoing_len = len(base_piece) + 2
     for i in range(len(keywords)):
         for j in range(i):
-            piece = f"({phrase_check(keywords[i])} {phrase_check(keywords[j])})"
-            ongoing_len += len(piece) + 4
+            piece = f"({keywords[i]} {keywords[j]})"
+            # piece = f"({phrase_check(keywords[i])} {phrase_check(keywords[j])})"
+            ongoing_len += len(piece) + 4 # add four for 2 spaces + "OR" added per piece
             length_flag = ongoing_len <= maxlen
             if not length_flag: break
             query_pieces.append(piece)
-            
         if not length_flag: break
+        
     return base_piece + "(" + " OR ".join(query_pieces) + ")"

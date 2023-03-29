@@ -35,3 +35,5 @@ You can configure the following flags in the config:
 | save_path | string | ./dataset.csv | path to save resulting dataset |
 | tweepy_client | tweept.Client | None | tweepy client to query twitter api |
 | device | torch.device | torch.device("cuda:0" if torch.cuda.is_available() else "cpu") | which device to run claim matching model on |
+| wait_per_query | int > 0 | 60 | seconds to wait per query on rate limit hit |
+| overlap_threshold | 0 < float < 1 | .98 | threshold to verify if two tweets are duplicate or not |
